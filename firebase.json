@@ -1,0 +1,34 @@
+{
+	"members": {
+		"11": {
+			"image": "",
+			"mail": "svømmelars@delfinen.dk",
+			"name": "Lars Larsen",
+			"phone": "00000000",
+			"title": "Formand",
+			"role": "Admin",
+			"age": 42,
+			"discipliner": "",
+			"membertype": "passiv"
+		}
+	},
+	"tournamentResults": {
+		"01": {
+			"result": "tid",
+			"tournament": "",
+			"date": "",
+			"disciplin": "Frisvømning",
+			"length": "50m",
+			"uid": ""
+		}
+	},
+	"trainingResults": {
+		"02": {
+			"result": "tid",
+			"date": "",
+			"disciplin": "Bryst",
+			"length": "50m",
+			"uid": ""
+		}
+	}
+}
