@@ -9,6 +9,4 @@ async function initApp() {
 	console.log("Hej");
 }
 
-async function updateUsersTable() {
-	users = await getUsers();
-}
+
