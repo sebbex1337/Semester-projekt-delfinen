@@ -1,7 +1,14 @@
-"use strict";
+import { getUsers, createUser, updateUser, deleteUser, getKontingent } from "./REST.js";
 
 window.addEventListener("load", initApp);
 
-function initApp() {
+let users;
+let kontingent;
+
+async function initApp() {
 	console.log("Hej");
+}
+
+async function updateUsersTable() {
+	users = await getUsers();
 }
