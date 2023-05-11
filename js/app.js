@@ -2,8 +2,13 @@ import { getUsers, createUser, updateUser, deleteUser, getKontingent } from "./R
 
 window.addEventListener("load", initApp);
 
+let users;
+let kontingent;
+
 async function initApp() {
 	console.log("Hej");
-	const kontingent = await getKontingent();
-	console.log(kontingent);
+}
+
+async function updateUsersTable() {
+	users = await getUsers();
 }
