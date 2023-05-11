@@ -12,8 +12,71 @@
 			<div id="logo-nav">
 				<img src="" id="logo-nav-img" />
 			</div>
-			<div id="about-nav"></div>
+			<div id="about-nav">
+				<h3>Om os</h3>
+			</div>
+			<div id="hold-nav">
+				<h3>Hold</h3>
+			</div>
+			<div id="kontingent-oversigt-nav">
+				<h3>Kontingent oversigt</h3>
+			</div>
+			<div id="kontingent-detail-nav">
+				<h3>Detaljeret kontingent oversigt</h3>
+			</div>
+			<div id="login-nav">
+				<h3>Logged in as: Kasserer TODO</h3>
+			</div>
 		</nav>
-		<script src="js/app.js"></script>
+		<main>
+			<div id="left-side-view">
+				<table>
+					<thead>
+						<tr>
+							<th>Medlemmerer</th>
+							<th>Antal</th>
+							<th>Kontingent pris</th>
+							<th>Samlet kontingent</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b>Junior</b></td>
+							<td id="table-junior-antal">0</td>
+							<td id="table-junior-kontingent-pris">0</td>
+							<td id="table-junior-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Senior</b></td>
+							<td id="table-senior-antal">0</td>
+							<td id="table-senior-kontingent-pris">0</td>
+							<td id="table-senior-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Senior+</b></td>
+							<td id="table-seniorPlus-antal">0</td>
+							<td id="table-seniorPlus-kontingent-pris">0</td>
+							<td id="table-seniorPlus-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Passiv</b></td>
+							<td id="table-passiv-antal">0</td>
+							<td id="table-passiv-kontingent-pris">0</td>
+							<td id="table-passiv-samlet-kontingent">0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="right-side-view">
+				<div id="kontingent-oversigt">
+					<h2>Forventet indeværende år</h2>
+					<h3 id="forventet-kontingent"></h3>
+					<br />
+					<h2>Manglede for indeværende år</h2>
+					<h3 id="manglende-kontingent"></h3>
+				</div>
+			</div>
+		</main>
+		<script src="js/kasserer.js" type="module"></script>
 	</body>
 </html>
