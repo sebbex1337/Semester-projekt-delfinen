@@ -1,8 +1,11 @@
-"use strict";
+import { getUsers, createUser, updateUser, deleteUser, getKontingent } from "./REST.js";
 
 window.addEventListener("load", initApp);
 
-function initApp() {
+let users;
+let kontingent;
+
+async function initApp() {
 	console.log("Hej");
 	document.querySelector("#loginDiv").addEventListener("click", showLogin)
 }
@@ -21,5 +24,9 @@ function validateLogin(event){
 	}else{
 		alert("login mislykkedes")
 	}
+
+async function updateUsersTable() {
+	users = await getUsers();
+}
 
 }
