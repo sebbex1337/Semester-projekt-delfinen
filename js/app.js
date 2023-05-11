@@ -5,7 +5,7 @@ window.addEventListener("load", initApp);
 let users;
 let kontingent;
 
-async function initApp() {
+function initApp() {
 	console.log("Hej");
 	document.querySelector("#loginDiv").addEventListener("click", showLogin)
 }
@@ -24,9 +24,8 @@ function validateLogin(event){
 	}else{
 		alert("login mislykkedes")
 	}
+}
 
 async function updateUsersTable() {
 	users = await getUsers();
-}
-
 }
