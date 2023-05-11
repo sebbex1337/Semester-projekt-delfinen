@@ -1,0 +1,39 @@
+/* Hold oversigt css */
+
+h1{
+    text-align: center;
+    color: #0D78AA;
+    font-size: 2em;
+
+}
+caption{
+    text-align: center;
+    font-weight: bold;
+    font-size: 0,5em;
+}
+body {
+    background-color: #E3FAFF;
+  }
+  
+  th {
+    height: 20px;
+    background-color: #C9FAFE;
+
+  }
+
+  table {
+    background-color: #C9FAFE;
+    width: 47%;
+  }
+  
+  table {
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+  }
+  td, th {
+    font-size: small;
+    padding: 10px;
+    border: 1px solid #cccccc;
+  }
+  
+  
