@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<title>Svømmeklubben Delfinen</title>
 	</head>
+	<!-- Nav bar -->
 	<nav>
 		<div id="delfinLogo"> <img id=""></div> 
 		<div id="aboutUs">
@@ -22,6 +23,17 @@
 			<h3>Login</h3>
 		</div>
 	</nav>
+	<!-- Login dialog -->
+	<dialog id="loginDialog">
+		<form id="login-form" method="dialog">
+			<h2>Login</h2>
+			<label for="username"><b>Brugernavn:</b></label>
+			<input type="text" id="loginUsername" name="username" placeholder="Brugernavn" required>
+			<label for="password"><b>Adgangskode:</b></label>
+			<input type="password" id="loginPassword" name="password" placeholder="Adgangskode" required>
+			<button>Login</button>
+		</form>
+	</dialog>
 	<body>
 		<script src="js/app.js" type="module"></script>
 	</body>
