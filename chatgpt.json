@@ -1,0 +1,84 @@
+{
+  "members": {
+    "1": {
+      "id": 1,
+      "navn": "Lars Nielsen",
+      "email": "lars@example.com",
+      "alder": 34,
+      "discipliner": ["butterfly", "brystsvømning"],
+      "status": true,
+      "svømmeType": "konkurrence"
+    },
+    "2": {
+      "id": 2,
+      "navn": "Anna Jensen",
+      "email": "anna@example.com",
+      "alder": 42,
+      "discipliner": ["crawl"],
+      "status": true,
+      "svømmeType": "motionist"
+    },
+    "3": {
+      "id": 3,
+      "navn": "Morten Pedersen",
+      "email": "morten@example.com",
+      "alder": 17,
+      "discipliner": ["rygcrawl", "brystsvømning"],
+      "status": true,
+      "svømmeType": "motionist"
+    },
+    "4": {
+      "id": 4,
+      "navn": "Louise Møller",
+      "email": "louise@example.com",
+      "alder": 55,
+      "discipliner": ["crawl", "butterfly"],
+      "status": true,
+      "svømmeType": "konkurrence"
+    },
+    "5": {
+      "id": 5,
+      "navn": "Peter Andersen",
+      "email": "peter@example.com",
+      "alder": 68,
+      "discipliner": ["brystsvømning"],
+      "status": false,
+      "svømmeType": "motionist"
+    },
+    "6": {
+      "id": 6,
+      "navn": "Maria Christensen",
+      "email": "maria@example.com",
+      "alder": 25,
+      "discipliner": ["rygcrawl"],
+      "status": true,
+      "svømmeType": "konkurrence"
+    },
+    "7": {
+      "id": 7,
+      "navn": "Anders Larsen",
+      "email": "anders@example.com",
+      "alder": 31,
+      "discipliner": ["crawl"],
+      "status": true,
+      "svømmeType": "konkurrence"
+    },
+    "8": {
+      "id": 8,
+      "navn": "Sofie Pedersen",
+      "email": "sofie@example.com",
+      "alder": 19,
+      "discipliner": ["butterfly"],
+      "status": true,
+      "svømmeType": "motionist"
+    },
+    "9": {
+      "id": 9,
+      "navn": "Mikkel Jensen",
+      "email": "mikkel@example.com",
+      "alder": 16,
+      "discipliner": ["crawl", "brystsvømning"],
+      "status": true,
+      "svømmeType": "motionist"
+    }
+}}
