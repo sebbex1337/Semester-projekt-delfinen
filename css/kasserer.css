@@ -1,0 +1,32 @@
+#forventet-kontingent {
+	color: green;
+	margin-bottom: 0;
+}
+
+#manglende-kontingent {
+	color: red;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#left-side-view {
+	margin: 2em;
+}
+
+#left-side-view table {
+	width: 100%;
+}
+
+#right-side-view {
+	margin: 2em 0 0 10em;
+}
+
+#kontingent-oversigt {
+	background-color: #c9fafe;
+	border: 1px solid black;
+	width: 50%;
+	text-align: center;
+}
