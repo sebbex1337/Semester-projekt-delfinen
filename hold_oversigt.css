@@ -36,4 +36,6 @@ body {
     border: 1px solid #cccccc;
   }
   
-  
+  .tools-grid{
+    text-align: center;
+  }
