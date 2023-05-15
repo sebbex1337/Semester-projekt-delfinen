@@ -1,5 +1,53 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #e3faff;
+}
+
 nav {
+	width: 100%;
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 12px;
+	background-color: #0d78aa;
+}
+
+footer {
+	background-color: #0d78aa;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 2em 0 2em 0;
+}
+
+h1 {
+	text-align: center;
+	color: #0d78aa;
+	font-size: 2em;
+}
+
+/* Table css */
+
+caption {
+	text-align: center;
+	font-weight: bold;
+	font-size: 0, 5em;
+}
+
+table {
+	background-color: #c9fafe;
+	width: 47%;
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+}
+
+td,
+th {
+	height: 20px;
+	background-color: #c9fafe;
+	font-size: small;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	text-align: center;
 }

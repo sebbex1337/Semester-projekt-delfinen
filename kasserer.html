@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/kasserer.css" />
+		<title>Svømmeklubben Delfinen</title>
+	</head>
+	<body>
+		<nav>
+			<div id="logo-nav">
+				<img src="" id="logo-nav-img" />
+			</div>
+			<div id="about-nav">
+				<h3>Om os</h3>
+			</div>
+			<div id="hold-nav">
+				<h3>Hold</h3>
+			</div>
+			<div id="kontingent-oversigt-nav">
+				<h3>Kontingent oversigt</h3>
+			</div>
+			<div id="kontingent-detail-nav">
+				<h3>Detaljeret kontingent oversigt</h3>
+			</div>
+			<div id="login-nav">
+				<h3>Logged in as: Kasserer TODO</h3>
+			</div>
+		</nav>
+		<main>
+			<div id="left-side-view">
+				<table>
+					<thead>
+						<th>Dato</th>
+						<th>Navn</th>
+						<th>Kontakt</th>
+						<th>ID</th>
+						<th>Kontingent</th>
+						<th>Betalt</th>
+						<th>Redigér</th>
+					</thead>
+					<tbody id="table-kontingent-oversigt"></tbody>
+				</table>
+			</div>
+			<div id="right-side-view">
+				<div id="kontingent-oversigt">
+					<h2>Forventet indeværende år</h2>
+					<h2 id="forventet-kontingent"></h2>
+					<br />
+					<h2>Manglede for indeværende år</h2>
+					<h2 id="manglende-kontingent"></h2>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Medlemmerer</th>
+							<th>Antal</th>
+							<th>Kontingent pris</th>
+							<th>Samlet kontingent</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b>Junior</b></td>
+							<td id="table-junior-antal">0</td>
+							<td>1000</td>
+							<td id="table-junior-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Senior</b></td>
+							<td id="table-senior-antal">0</td>
+							<td>1600</td>
+							<td id="table-senior-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Senior+</b></td>
+							<td id="table-seniorPlus-antal">0</td>
+							<td>1200</td>
+							<td id="table-seniorPlus-samlet-kontingent">0</td>
+						</tr>
+						<tr>
+							<td><b>Passiv</b></td>
+							<td id="table-passiv-antal">0</td>
+							<td>500</td>
+							<td id="table-passiv-samlet-kontingent">0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+		<footer>TEST</footer>
+		<script src="js/kasserer.js" type="module"></script>
+	</body>
+</html>
