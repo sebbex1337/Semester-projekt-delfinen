@@ -1,22 +1,23 @@
 {
 	"members": {
 		"0": {
-			"id": 0,
-			"name": "Lars Larsen",
-			"mail": "lars@delfinen.dk",
 			"age": 42,
 			"discipliner": "",
-			"status": true,
-			"role": "admin"
+			"id": 0,
+			"mail": "lars@delfinen.dk",
+			"name": "Lars Larsen",
+			"role": "admin",
+			"status": true
 		},
 		"1": {
-			"id": 1,
-			"name": "Lars Nielsen",
-			"mail": "lars@example.com",
 			"age": 34,
 			"discipliner": ["butterfly", "brystsvømning"],
-			"status": true,
-			"role": "konkurrence"
+			"id": 1,
+			"mail": "lars@example.com",
+			"name": "Lars Nielsen",
+			"payed": true,
+			"role": "konkurrence",
+			"status": true
 		},
 		"2": {
 			"id": 2,

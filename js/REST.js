@@ -64,8 +64,8 @@ function prepareKontingentData(DataObject) {
 	return newData;
 }
 
-async function updateKontingent(junior, senior, seniorPlus) {
-	const newKontingent = { junior, senior, seniorPlus };
+async function updateKontingent(junior, passiv, senior, seniorPlus) {
+	const newKontingent = { junior, passiv, senior, seniorPlus };
 	const kontingentAsJson = JSON.stringify(newKontingent);
 	const response = await fetch(`${ENDPOINT}/kontingent/kontingent.json`, {
 		method: "PUT",
