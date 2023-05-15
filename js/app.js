@@ -29,3 +29,9 @@ function validateLogin(event){
 async function updateUsersTable() {
 	users = await getUsers();
 }
+
+function adminViewUsers(){
+document.querySelector("#").insertAdjacentHTML("beforeend",
+/*html*/`<`
+)
+}
