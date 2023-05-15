@@ -1,9 +1,7 @@
-import { getUsers, createUser, updateUser, deleteUser, getKontingent } from "./REST.js";
-import { adminViewUsers } from "./admin.js";
+import { getUsers } from "./REST.js";
 window.addEventListener("load", initApp);
 
 let users;
-let kontingent;
 
 function initApp() {
 	console.log("Hej");
@@ -58,5 +56,3 @@ function displayUsers(listOfUsers) {
 		document.querySelector("#hold_oversigt").innerHTML = "Sorry! No users were found";
 	}
 }
-
-export { initApp };
