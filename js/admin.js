@@ -1,20 +1,31 @@
+import { getUsers } from "./REST.js";
 window.addEventListener("load", initApp);
 
-import { initApp } from "./app.js";
+let users 
 
-function adminViewUsers() {
-	document.querySelector("#").insertAdjacentHTML(
+function initApp(){
+    console.log("admin view loaded")
+    fetchUsers()
+}
+async function fetchUsers(){
+users = await getUsers()
+adminViewUsers(users)
+}
+function adminViewUser(user) {
+	document.querySelector("#adminview").insertAdjacentHTML(
 		"beforeend",
-		/*html*/ `<thead>
-		<tr>
-			<th>Placering: ${user.placering}</th>
-			<th>Navn: ${user.name}</th>
-			<th>Alder: ${user.age}</th>
-			<th>Kontakt: ${user.kontakt}</th>
-			<th>Resultater ${user.results}</th>
-			<th>Rediger</th>
-		</tr>
-	</thead>
-	<tbody id="adminview"></tbody>`
-	);
+		/*html*/ `<tr>
+        <td>Missing("Placement")</td>
+        <td>${user.name}</td>
+        <td>${user.age}</td>
+        <td>${user.mail}</td>
+        <td>Missing("results")</td>
+        <td>Rediger</td>
+        </tr>`
+    );}
+
+function adminViewUsers(usersList){
+    for(const user of usersList ){
+        adminViewUser(user)
+    }
 }

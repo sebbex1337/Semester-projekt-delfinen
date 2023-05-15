@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="hold_oversigt.css">
+	<link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,8 +26,19 @@
 		</div>
 	</nav>
 <table style="float:left">
-	
+	<thead>
+		<tr>
+			<th>Placering: </th>
+			<th>Navn: </th>
+			<th>Alder:</th>
+			<th>Kontakt: </th>
+			<th>Resultater:</th>
+			<th>Rediger</th>
+		</tr>
+	</thead>
+	<tbody id="adminview"></tbody>
+
 </table>
 </body>
-<script src="admin.js"></script>
+<script src="js/admin.js" type="module"></script>
 </html>
