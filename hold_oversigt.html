@@ -6,164 +6,174 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
 
-    <title>Hold Oversigt</title>
-</head>
-<h1>Hold oversigt</h1>
-    <section class="tools-grid" style="float:right;">
-        <label for="sort-by" id="sort-by-label"
-            >Sort by:
-            <select id="sort-by">
-                <option value="" selected disabled>Sorter</option>
-                <option value="name">Navn</option>
-                <option value="age">Alder</option>
-                <option value="Disciplin">Disciplin</option>
-            </select>
-        </label>
-        <label for="filter-by" id="filter-by-label">
-            Filter by:
-            <select id="filter-by">
-                <option value="" selected>Filter</option>
-                <option value="Butterfly">Butterfly</option>
-                <option value="Crawl">Crawl</option>
-                <option value="Rygcrawl">Rygcrawl</option>
-                <option value="Brystsvømning">Brystsvømning</option>
-                <option value="Junior">Junior</option>
-                <option value="Senior">Senior</option>
-            </select>
-        </label>
-    </section>
-<body>
-    <table style="float:left;">
-		<caption>Træningstider</caption>
-		<thead>
-			<tr>
-				<th>Ugedag</th>
-				<th>Hold</th>
-				<th>Tidsrum</th>
-				<th>Sted</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Mandag</td>
-				<td>Junior konkurrencehold<br>
-                    Senior konkurrencehold<br>
-                    Senior+ motionisthold<br>
-                    Junior motionisthold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-			<tr>
-				<td>Tirsdag</td>
-				<td>Senior motionisthold<br>
-                    Junior konkurrencehold<br>
-                    Senior konkurrencehold<br>
-                    Senior+ motionisthold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-            <tr>
-				<td>Onsdag</td>
-				<td>Junior motionisthold<br>
-                    Senior motionisthold<br>
-                    Junior konkurrencehold<br>
-                    Senior konkurrencehold<br></td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-            <tr>
-				<td>Torsdag</td>
-				<td>Senior+ motionisthold<br>
-                    Junior motionisthold<br>
-                    Senior motionisthold<br>
-                    Junior konkurrencehold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-            <tr>
-				<td>Fredag</td>
-				<td>Senior konkurrencehold<br>
-                    Senior+ motionisthold<br>
-                    Junior motionisthold<br>
-                    Senior motionisthold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-            <tr>
-				<td>Lørdag</td>
-				<td>Junior konkurrencehold<br>
-                    Senior konkurrencehold<br>
-                    Senior+ motionisthold<br>
-                    Junior motionisthold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-            <tr>
-				<td>Søndag</td>
-				<td>Senior motionisthold<br>
-                    Junior konkurrencehold<br>
-                    Senior konkurrencehold<br>
-                    Senior+ motionisthold<br>
-                </td>
-				<td>
-                    09:00-11:00<br>
-                    11:30-13:30<br>
-                    14:00-16:00<br>
-                    16:30-18:30<br>
-                </td>
-				<td>Svømmehal</td>
-			</tr>
-		</tbody>
-	</table>
-	<table style="float:right;">
-		<caption>Hold oversigt</caption>
-		<thead>
-			<tr>
-				<th>Disciplin</th>
-				<th>Navn</th>
-				<th>Alder</th>
-				<th>Kontakt</th>
-			</tr>
-		</thead>
-		<tbody id="hold_oversigt">
-			
-		</tbody>
-	</table>
-    <script src="js/app.js" type="module"></script>
-</body>
+		<title>Hold Oversigt</title>
+	</head>
+	<h1>Hold oversigt</h1>
+	<section class="tools-grid" style="float: right">
+		<label for="sort-by" id="sort-by-label"
+			>Sort by:
+			<select id="sort-by">
+				<option value="" selected disabled>Sorter</option>
+				<option value="name">Navn</option>
+				<option value="age">Alder</option>
+				<option value="Disciplin">Disciplin</option>
+			</select>
+		</label>
+		<label for="filter-by" id="filter-by-label">
+			Filter by:
+			<select id="filter-by">
+				<option value="" selected>Filter</option>
+				<option value="Butterfly">Butterfly</option>
+				<option value="Crawl">Crawl</option>
+				<option value="Rygcrawl">Rygcrawl</option>
+				<option value="Brystsvømning">Brystsvømning</option>
+				<option value="Junior">Junior</option>
+				<option value="Senior">Senior</option>
+			</select>
+		</label>
+	</section>
+	<body>
+		<table style="float: left">
+			<caption>
+				Træningstider
+			</caption>
+			<thead>
+				<tr>
+					<th>Ugedag</th>
+					<th>Hold</th>
+					<th>Tidsrum</th>
+					<th>Sted</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Mandag</td>
+					<td>
+						Junior konkurrencehold<br />
+						Senior konkurrencehold<br />
+						Senior+ motionisthold<br />
+						Junior motionisthold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Tirsdag</td>
+					<td>
+						Senior motionisthold<br />
+						Junior konkurrencehold<br />
+						Senior konkurrencehold<br />
+						Senior+ motionisthold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Onsdag</td>
+					<td>
+						Junior motionisthold<br />
+						Senior motionisthold<br />
+						Junior konkurrencehold<br />
+						Senior konkurrencehold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Torsdag</td>
+					<td>
+						Senior+ motionisthold<br />
+						Junior motionisthold<br />
+						Senior motionisthold<br />
+						Junior konkurrencehold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Fredag</td>
+					<td>
+						Senior konkurrencehold<br />
+						Senior+ motionisthold<br />
+						Junior motionisthold<br />
+						Senior motionisthold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Lørdag</td>
+					<td>
+						Junior konkurrencehold<br />
+						Senior konkurrencehold<br />
+						Senior+ motionisthold<br />
+						Junior motionisthold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+				<tr>
+					<td>Søndag</td>
+					<td>
+						Senior motionisthold<br />
+						Junior konkurrencehold<br />
+						Senior konkurrencehold<br />
+						Senior+ motionisthold<br />
+					</td>
+					<td>
+						09:00-11:00<br />
+						11:30-13:30<br />
+						14:00-16:00<br />
+						16:30-18:30<br />
+					</td>
+					<td>Svømmehal</td>
+				</tr>
+			</tbody>
+		</table>
+		<table style="float: right">
+			<caption>
+				Hold oversigt
+			</caption>
+			<thead>
+				<tr>
+					<th>Disciplin</th>
+					<th>Navn</th>
+					<th>Alder</th>
+					<th>Kontakt</th>
+				</tr>
+			</thead>
+			<tbody id="hold_oversigt"></tbody>
+		</table>
+		<script src="js/hold_oversigt.js" type="module"></script>
+	</body>
 </html>

@@ -1,26 +1,11 @@
 import { getUsers } from "./REST.js";
+
 window.addEventListener("load", initApp);
 
 let users;
 
 function initApp() {
 	console.log("Hej");
-	document.querySelector("#loginDiv").addEventListener("click", showLogin);
-}
-function showLogin() {
-	document.querySelector("#loginDialog").showModal();
-	document.querySelector("#login-form").addEventListener("submit", validateLogin);
-	document.querySelector("#login-form").reset();
-}
-function validateLogin(event) {
-	event.preventDefault();
-	const username = document.querySelector("#loginUsername").value;
-	const password = document.querySelector("#loginPassword").value;
-
-	if (username === user.username && password === user.password) {
-	} else {
-		alert("login mislykkedes");
-	}
 	updateUsersTable();
 
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
@@ -59,7 +44,7 @@ function displayUsers(listOfUsers) {
 		document.querySelector("#hold_oversigt").innerHTML = "Sorry! No users were found";
 	}
 }
-// sorter og filter 
+// sorter og filter
 
 function sortUsers(sortBy) {
 	if (sortBy === "name") {
@@ -91,9 +76,9 @@ function filterUsers(filterBy) {
 		case "Brystsvømning":
 			return users.filter((user) => user.discipliner.includes(filterBy));
 		case "Junior":
-			return users.filter((user) => user.age <18);
+			return users.filter((user) => user.age < 18);
 		case "Senior":
-			return users.filter((user) => user.age >=18);
+			return users.filter((user) => user.age >= 18);
 	}
 }
 
@@ -101,4 +86,3 @@ function filterByChanged(event) {
 	const selectedValue = event.target.value;
 	displayUsers(filterUsers(selectedValue));
 }
-
