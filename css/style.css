@@ -12,6 +12,15 @@ nav {
 	background-color: #0d78aa;
 }
 
+footer {
+	background-color: #0d78aa;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 2em 0 2em 0;
+}
+
 h1 {
 	text-align: center;
 	color: #0d78aa;

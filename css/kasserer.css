@@ -1,3 +1,11 @@
+#kontingent-oversigt {
+	background-color: #c9fafe;
+	border: 1px solid black;
+	width: 50%;
+	text-align: center;
+	justify-content: center;
+}
+
 #forventet-kontingent {
 	color: green;
 	margin-bottom: 0;
@@ -21,12 +29,13 @@ main {
 }
 
 #right-side-view {
-	margin: 2em 0 0 10em;
+	margin: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
-#kontingent-oversigt {
-	background-color: #c9fafe;
-	border: 1px solid black;
-	width: 50%;
-	text-align: center;
+#right-side-view table {
+	width: 100%;
 }
