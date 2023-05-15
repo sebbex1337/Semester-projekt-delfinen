@@ -8,6 +8,9 @@ let kontingent;
 function initApp() {
 	console.log("Hej");
 	updateUsersTable();
+
+	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
+	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
 }
 
 async function updateUsersTable() {
@@ -40,4 +43,46 @@ function displayUsers(listOfUsers) {
 	} else {
 		document.querySelector("#hold_oversigt").innerHTML = "Sorry! No users were found";
 	}
+}
+// sorter og filter 
+
+function sortUsers(sortBy) {
+	if (sortBy === "name") {
+		return users.sort((userA, userB) => userA.name > userB.name);
+	}
+	if (sortBy === "age") {
+		return users.sort((userA, userB) => userA.age > userB.age);
+	}
+	if (sortBy === "discipliner") {
+		return users.sort((userA, userB) => userA.discipliner > userB.discipliner);
+	}
+}
+
+function sortByChanged(event) {
+	const selectedValue = event.target.value;
+	displayUsers(sortUsers(selectedValue));
+}
+
+function filterUsers(filterBy) {
+	switch (filterBy) {
+		case "":
+			return users;
+		case "Butterfly":
+			return users.filter((user) => user.discipliner.includes(filterBy));
+		case "Crawl":
+			return users.filter((user) => user.discipliner.includes(filterBy));
+		case "Rygcrawl":
+			return users.filter((user) => user.discipliner.includes(filterBy));
+		case "Brystsvømning":
+			return users.filter((user) => user.discipliner.includes(filterBy));
+		case "Junior":
+			return users.filter((user) => user.age <18);
+		case "Senior":
+			return users.filter((user) => user.age >=18);
+	}
+}
+
+function filterByChanged(event) {
+	const selectedValue = event.target.value;
+	displayUsers(filterUsers(selectedValue));
 }
