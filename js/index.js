@@ -2,6 +2,9 @@ window.addEventListener("load", initApp);
 
 function initApp() {
 	document.querySelector("#loginDiv").addEventListener("click", showLogin);
+	document.querySelector("#aboutUs").addEventListener("click", () => {
+		window.location.href = "aboutUs.html";
+	});
 }
 
 function showLogin() {
