@@ -13,6 +13,7 @@ async function updateUsersArr() {
 	displayNumbersinTable(users);
 	displayCumulatedKontingent(users);
 	displayMissingQuota(users);
+	displayUsersTable(users);
 }
 
 function displayNumbersinTable(listOfUsers) {
@@ -96,20 +97,51 @@ function displayMissingQuota(listOfUsers) {
 
 	for (const user of listOfUsers) {
 		if (!user.payed) {
-			if (user.status) {
-				if (user.age < 18) {
-					sum += 1000;
-				}
-				if (user.age >= 18) {
-					sum += 1600;
-				}
-				if (user.age >= 60) {
-					sum += 1200;
-				}
-			} else {
-				sum += 500;
-			}
+			sum += calculateKontingent(user);
 		}
 	}
 	document.querySelector("#manglende-kontingent").textContent = sum + " kr";
+}
+
+/* User table */
+
+function displayUsersTable(listOfUsers) {
+	document.querySelector("#table-kontingent-oversigt").innerHTML = "";
+
+	for (const user of listOfUsers) {
+		displayUser(user);
+	}
+}
+
+function displayUser(user) {
+	const kontingent = calculateKontingent(user);
+	document.querySelector("#table-kontingent-oversigt").insertAdjacentHTML(
+		"beforeend",
+		/*html*/ `
+            <tr>
+                <td>MISSING IN FIREBASE</td>
+                <td>${user.name}</td>
+                <td>${user.mail}</td>
+                <td>${user.id}</td>
+                <td>${kontingent}</td>
+                <td>${user.payed}</td>
+                <td><button>Redigér</button></td>
+            </tr>`
+	);
+}
+
+function calculateKontingent(user) {
+	if (user.status) {
+		if (user.age < 18) {
+			return 1000;
+		}
+		if (user.age >= 18) {
+			return 1600;
+		}
+		if (user.age >= 60) {
+			return 1200;
+		}
+	} else {
+		return 500;
+	}
 }

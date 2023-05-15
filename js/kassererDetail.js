@@ -5,7 +5,6 @@ window.addEventListener("load", initApp);
 let users = [];
 
 function initApp() {
-	console.log("hej");
 	updateUsersTable();
 }
 async function updateUsersTable() {
@@ -32,7 +31,7 @@ function displayUser(user) {
                 <td>${user.mail}</td>
                 <td>${user.id}</td>
                 <td>${kontingent}</td>
-                <td>MISSING IN FIREBASE</td>
+                <td>${user.payed}</td>
                 <td><button>Redigér</button></td>
             </tr>`
 	);
