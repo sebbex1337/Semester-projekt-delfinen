@@ -1,11 +1,10 @@
-import { getUsers } from "./REST.js";
 window.addEventListener("load", initApp);
 
-let users;
-
 function initApp() {
-	console.log("Hej");
 	document.querySelector("#loginDiv").addEventListener("click", showLogin);
+	document.querySelector("#aboutUs").addEventListener("click", () => {
+		window.location.href = "aboutUs.html";
+	});
 }
 
 function showLogin() {
@@ -19,8 +18,13 @@ function validateLogin(event) {
 	const username = document.querySelector("#loginUsername").value;
 	const password = document.querySelector("#loginPassword").value;
 
-	if (username === user.username && password === user.password) {
-	} else {
-		alert("login mislykkedes");
+	if (username === "admin" && password === "admin") {
+		window.location.href = "admin.html";
+	}
+	if (username === "coach" && password === "coach") {
+		window.location.href = "hold_oversigt.html";
+	}
+	if (username === "kasserer" && password === "kasserer") {
+		window.location.href = "kasserer.html";
 	}
 }
