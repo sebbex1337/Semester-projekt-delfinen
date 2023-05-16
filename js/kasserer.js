@@ -6,6 +6,7 @@ let users = [];
 function initApp() {
 	updateUsersArr();
 	document.querySelector("#restance-select").addEventListener("change", filterByChanged);
+	document.querySelector("#logOut").addEventListener("click", () => (window.location.href = "index.html"));
 }
 
 async function updateUsersArr() {

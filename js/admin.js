@@ -4,9 +4,8 @@ window.addEventListener("load", initApp);
 let users;
 
 function initApp() {
-	console.log("admin view loaded");
 	fetchUsers();
-
+	document.querySelector("#logOut").addEventListener("click", () => (window.location.href = "index.html"));
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 	document.querySelector("#status_select").addEventListener("change", showKontingent);
 	document.querySelector("#dialog-close-button").addEventListener("click", () => {

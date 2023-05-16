@@ -5,9 +5,9 @@ window.addEventListener("load", initApp);
 let users;
 
 function initApp() {
-	console.log("Hej");
 	updateUsersTable();
 
+	document.querySelector("#logOut").addEventListener("click", () => (window.location.href = "index.html"));
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
 }
