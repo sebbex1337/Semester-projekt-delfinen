@@ -8,9 +8,11 @@ function initApp() {
 	fetchUsers();
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
-	document.querySelector("#status_select").addEventListener("change", showKontingent);
+	document.querySelector("#status_select").addEventListener("change", () => showKontingent("kontingentPris"));
 	document.querySelector("#updateUser").addEventListener("click", updateUserClicked);
-	document.querySelector("#dialog-close-button").addEventListener("click",()=>{document.querySelector("#dialog-create-user").close()})
+	document.querySelector("#dialog-close-button").addEventListener("click", () => {
+		document.querySelector("#dialog-create-user").close();
+	});
 }
 
 async function fetchUsers() {
@@ -62,7 +64,7 @@ async function createUserClicked(event) {
 	}
 }
 
-function showKontingent() {
+function showKontingent(query) {
 	const age = document.querySelector("#form-create-age").value;
 	const status = document.querySelector("#status_select").value;
 	console.log(status);
@@ -82,7 +84,7 @@ function showKontingent() {
 		html = "Dit årlige kontingent med et passivt medlemskab er 500 kr.";
 	}
 
-	document.querySelector("#kontingentPris").textContent = html;
+	document.querySelector(query).textContent = html;
 }
 function updateUserDialog(user) {
 	document.querySelector("#dialog_update_user").showModal();
@@ -98,5 +100,5 @@ async function updateUserClicked(user) {
 	updateUserForm.role_update.value = user.role;
 	updateUserForm.setAttribute("data-id", user.id);
 	document.querySelector("#dialog_update_user").showModal();
-	showKontingent();
+	showKontingent("kontingentPris_update");
 }
