@@ -10,6 +10,7 @@ function initApp() {
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 	document.querySelector("#status_select").addEventListener("change", showKontingent);
 	document.querySelector("#updateUser").addEventListener("click", updateUserClicked);
+	document.querySelector("#dialog-close-button").addEventListener("click",()=>{document.querySelector("#dialog-create-user").close()})
 }
 
 async function fetchUsers() {
@@ -68,17 +69,17 @@ function showKontingent() {
 	let html = "";
 	if (status === "true") {
 		if (age < 18) {
-			html = "dit årlige kontingent 1000 kr.";
+			html = "Dit årlige kontingent som junior svømmer bliver 1000 kr.";
 		}
 		if (age >= 18 && age < 60) {
-			html = "dit årlige kontingent 1600 kr.";
+			html = "Dit årlige kontingent som senior svømmer bliver 1600 kr.";
 		}
 		if (age >= 60) {
-			html = "dit årlige kontingent 1200 kr.";
+			html = "Dit årlige kontingent som svømmer over 60 år bliver 1200 kr.";
 		}
 	}
 	if (status === "false") {
-		html = "dit årlige kontingent er 500 kr.";
+		html = "Dit årlige kontingent med et passivt medlemskab er 500 kr.";
 	}
 
 	document.querySelector("#kontingentPris").textContent = html;

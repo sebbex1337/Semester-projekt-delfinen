@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="hold_oversigt.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/admin.css">
 		<title>Document</title>
 	</head>
 	<body>
@@ -76,7 +77,7 @@
 						</label>
 					</section>
 					<section id="form-create-options-section">
-						<h2>Discipliner</h2>
+						<h3>Discipliner</h3>
 						<label for="disciplinButterfly"
 							>Butterfly:
 							<input type="radio" name="discipliner" id="form-create-disciplinButterlfy" value="Butterfly" selected />
@@ -93,7 +94,7 @@
 							>Brystsvømning:
 							<input type="radio" name="discipliner" id="form-create-disciplinBryst" value="Brystsvømning" />
 						</label>
-						<h2>Kontingent pris:</h2>
+						<h4>Kontingent pris:</h4>
 						<p id="kontingentPris"></p>
 						<label for="Kontingent"></label>
 					</section>
@@ -101,6 +102,7 @@
 				<section id="form-create-btns">
 					<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Create user" />
 					<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
+					<button type="button" id="dialog-close-button">Close</button>
 				</section>
 			</form>
 		</dialog>
