@@ -1,59 +1,56 @@
 #dialog-create-user {
-    width: 600px;
-    padding: 20px;
-    background-color: #C9FAFE;
-  }
-  
-  #dialog-create-user h2 {
-    margin-top: 0;
-    text-align: center;
-  }
-  
-  #form-create-new-user {
-    margin-bottom: 20px;
-  }
-  
-  .form-create-user-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-  
-  #form-create-user-info label {
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  #form-create-options-section h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-  #kontigentPris h4 {
-    margin-top: 10px;
-  }
-  
-  #form-create-options-section label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 10px;
-  }
-  
+	width: 600px;
+	padding: 20px;
+	background-color: #c9fafe;
+}
 
-  #form-create-btns {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .input-btns-styling {
-    margin-left: 10px;
-  }
+#dialog-create-user h2 {
+	margin-top: 0;
+	text-align: center;
+}
 
-  #dialog-close-button {
-background-color: red;
-margin: 10px;
-  }
-  #submit-btn{
-    background-color: green;
-  }
+#form-create-new-user {
+	margin-bottom: 20px;
+}
 
-  
+.form-create-user-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+}
+
+#form-create-user-info label {
+	display: block;
+	margin-bottom: 20px;
+}
+
+#form-create-options-section h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+#kontigentPris h4 {
+	margin-top: 10px;
+}
+
+#form-create-options-section label {
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+#form-create-btns {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.input-btns-styling {
+	margin-left: 10px;
+}
+
+#dialog-close-button {
+	background-color: red;
+	margin: 10px;
+}
+#submit-btn {
+	background-color: green;
+}
