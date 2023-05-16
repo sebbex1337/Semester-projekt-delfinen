@@ -21,7 +21,7 @@ function prepareUsersData(DataObject) {
 	return newData;
 }
 
-async function createUser(name, mail, age, discipliner, status, role, username, password) {
+async function createUser(name, mail, age, discipliner, status, role) {
 	const newUser = { name, mail, age, discipliner, status, role, username, password };
 	const userAsJson = JSON.stringify(newUser);
 	const response = await fetch(`${ENDPOINT}/members.json`, {
@@ -46,32 +46,4 @@ async function deleteUser(id) {
 	return response;
 }
 
-/* CRUD functions for kontingent */
-
-async function getKontingent() {
-	const response = await fetch(`${ENDPOINT}/kontingent.json`);
-	const data = await response.json();
-	const kontingent = prepareKontingentData(data);
-	return kontingent;
-}
-
-function prepareKontingentData(DataObject) {
-	const newData = [];
-	for (const key in DataObject) {
-		const kontingent = DataObject[key];
-		newData.push(kontingent);
-	}
-	return newData;
-}
-
-async function updateKontingent(junior, passiv, senior, seniorPlus) {
-	const newKontingent = { junior, passiv, senior, seniorPlus };
-	const kontingentAsJson = JSON.stringify(newKontingent);
-	const response = await fetch(`${ENDPOINT}/kontingent/kontingent.json`, {
-		method: "PUT",
-		body: kontingentAsJson,
-	});
-	return response;
-}
-
-export { getUsers, createUser, deleteUser, updateUser, getKontingent, updateKontingent };
+export { getUsers, createUser, deleteUser, updateUser };
