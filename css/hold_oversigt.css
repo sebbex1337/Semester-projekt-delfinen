@@ -1,0 +1,25 @@
+.tools-grid {
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+table {
+	width: 100%;
+}
+
+#right-side-view {
+	margin: 2em;
+}
+
+#left-side-view {
+	margin: 2em;
+}
+
+#hold_oversigt {
+	overflow: scroll;
+}
