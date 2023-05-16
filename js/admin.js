@@ -9,6 +9,7 @@ function initApp() {
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 	document.querySelector("#status_select").addEventListener("change", showKontingent);
+	document.querySelector("#dialog-close-button").addEventListener("click",()=>{document.querySelector("#dialog-create-user").close()})
 }
 
 async function fetchUsers() {
