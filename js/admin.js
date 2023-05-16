@@ -8,8 +8,7 @@ function initApp() {
 	fetchUsers();
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
-	document.querySelector("#status_select").addEventListener("change", () => showKontingent("kontingentPris"));
-	document.querySelector("#updateUser").addEventListener("click", updateUserClicked);
+	document.querySelector("#status_select").addEventListener("change", showKontingent);
 	document.querySelector("#dialog-close-button").addEventListener("click", () => {
 		document.querySelector("#dialog-create-user").close();
 	});
@@ -19,6 +18,13 @@ async function fetchUsers() {
 	users = await getUsers();
 	adminViewUsers(users);
 }
+
+function adminViewUsers(usersList) {
+	for (const user of usersList) {
+		adminViewUser(user);
+	}
+}
+
 function adminViewUser(user) {
 	document.querySelector("#adminview").insertAdjacentHTML(
 		"beforeend",
@@ -33,12 +39,6 @@ function adminViewUser(user) {
         </tr>`
 	);
 	document.querySelector("#adminview tr:last-child .edit").addEventListener("click", () => updateUserClicked(user));
-}
-
-function adminViewUsers(usersList) {
-	for (const user of usersList) {
-		adminViewUser(user);
-	}
 }
 
 function showCreateUserDialog() {
@@ -64,7 +64,19 @@ async function createUserClicked(event) {
 	}
 }
 
-function showKontingent(query) {
+function updateUserClicked(user) {
+	const updateUserForm = document.querySelector("#form_update_user");
+	updateUserForm.name.value = user.name;
+	updateUserForm.age.value = user.age;
+	updateUserForm.mail.value = user.mail;
+	updateUserForm.status_update.value = user.status;
+	updateUserForm.discipliner.value = user.discipliner;
+	updateUserForm.role_update.value = user.role;
+	updateUserForm.setAttribute("data-id", user.id);
+	document.querySelector("#dialog_update_user").showModal();
+}
+
+function showKontingent() {
 	const age = document.querySelector("#form-create-age").value;
 	const status = document.querySelector("#status_select").value;
 	console.log(status);
@@ -84,21 +96,5 @@ function showKontingent(query) {
 		html = "Dit årlige kontingent med et passivt medlemskab er 500 kr.";
 	}
 
-	document.querySelector(query).textContent = html;
-}
-function updateUserDialog(user) {
-	document.querySelector("#dialog_update_user").showModal();
-	document.querySelector("#form_update_user").addEventListener("submit", updateUserClicked);
-}
-async function updateUserClicked(user) {
-	const updateUserForm = document.querySelector("#form_update_user");
-	updateUserForm.name.value = user.name;
-	updateUserForm.age.value = user.age;
-	updateUserForm.mail.value = user.mail;
-	updateUserForm.status_update.value = user.status;
-	updateUserForm.discipliner.value = user.discipliner;
-	updateUserForm.role_update.value = user.role;
-	updateUserForm.setAttribute("data-id", user.id);
-	document.querySelector("#dialog_update_user").showModal();
-	showKontingent("kontingentPris_update");
+	document.querySelector("kontingentPris").textContent = html;
 }
