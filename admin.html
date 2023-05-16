@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<button id="createUser">Create new user</button>
+			<button id="createUser">Opret nyt medlem</button>
 		</header>
 		<!-- Nav bar -->
 		<nav>
@@ -100,6 +100,68 @@
 				</section>
 				<section id="form-create-btns">
 					<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Create user" />
+					<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
+				</section>
+			</form>
+		</dialog>
+
+		<!---Update User-->
+		<dialog id="dialog_update_user" method="dialog">
+			<form id="form_update_user">
+				<section class="form_update_user_grid"></section>
+				<section class="form_update_user_info">
+					<label for="name_update"
+						>Navn:
+						<input type="text" name="name" id="form_update_name" placeholder="Enter Name" required />
+					</label>
+					<label for="age_update"
+						>Alder:
+						<input type="number" name="age" id="form_update_age" placeholder="Age" required />
+					</label>
+					<label for="role_update"
+						>Aktivitetsform:
+						<select id="role_update">
+							<option value="" disabled selected>Vælg</option>
+							<option value="konkurrence">Konkurrence</option>
+							<option value="motionist">Motionist</option>
+						</select>
+					</label>
+					<label for="update_mail">
+						<input type="text" name="mail" id="form_update_mail" placeholder="mail" required />
+					</label>
+					<label for="status_update"
+						>Status:
+						<select id="status_update">
+							<option value="" disabled selected>Vælg</option>
+							<option value="aktiv">Aktiv</option>
+							<option value="passiv">Passiv</option>
+						</select>
+					</label>
+				</section>
+				<section class="form_options_update">
+					<h2>Discipliner</h2>
+					<label for="disciplinButterfly"
+						>Butterfly:
+						<input type="radio" name="discipliner" id="form_update_disciplinButterlfy" value="Butterfly" selected />
+					</label>
+					<label for="disciplinCrawl"
+						>Crawl:
+						<input type="radio" name="discipliner" id="form_update_disciplinCrawl" value="Crawl" />
+					</label>
+					<label for="disciplinRygcrawl"
+						>Rygcrawl:
+						<input type="radio" name="discipliner" id="form_disciplinRygcrawl" value="Rygcrawl" />
+					</label>
+					<label for="disciplinBryst"
+						>Brystsvømning:
+						<input type="radio" name="discipliner" id="form_update_disciplinBryst" value="Brystsvømning" />
+					</label>
+					<h2>Kontingent pris:</h2>
+					<p id="kontingentPris_update"></p>
+					<label for="Kontingent"></label>
+				</section>
+				<section id="form_update_btns">
+					<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Update user" />
 					<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
 				</section>
 			</form>

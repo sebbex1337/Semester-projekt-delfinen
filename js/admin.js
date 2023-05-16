@@ -1,4 +1,4 @@
-import { getUsers, createUser } from "./REST.js";
+import { getUsers, createUser, updateUser } from "./REST.js";
 window.addEventListener("load", initApp);
 
 let users;
@@ -9,6 +9,7 @@ function initApp() {
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 	document.querySelector("#status_select").addEventListener("change", showKontingent);
+	document.querySelector("#updateUser").addEventListener("click", updateUserClicked);
 }
 
 async function fetchUsers() {
@@ -24,9 +25,11 @@ function adminViewUser(user) {
         <td>${user.age}</td>
         <td>${user.mail}</td>
         <td>Missing("results")</td>
-        <td>Rediger</td>
+        <td>
+        <button class="edit">Rediger</button></td>
         </tr>`
 	);
+	document.querySelector("#adminview tr:last-child .edit").addEventListener("click", () => updateUserClicked(user));
 }
 
 function adminViewUsers(usersList) {
@@ -54,8 +57,7 @@ async function createUserClicked(event) {
 		console.log("User added to Firebase!");
 		form.reset();
 		document.querySelector("#dialog-create-user").close();
-        fetchUsers();
-		showPrompt("User added to Firebase!");
+		fetchUsers();
 	}
 }
 
@@ -80,4 +82,20 @@ function showKontingent() {
 	}
 
 	document.querySelector("#kontingentPris").textContent = html;
+}
+function updateUserDialog(user) {
+	document.querySelector("#dialog_update_user").showModal();
+	document.querySelector("#form_update_user").addEventListener("submit", updateUserClicked);
+}
+async function updateUserClicked(user) {
+	const updateUserForm = document.querySelector("#form_update_user");
+	updateUserForm.name.value = user.name;
+	updateUserForm.age.value = user.age;
+	updateUserForm.mail.value = user.mail;
+	updateUserForm.status_update.value = user.status;
+	updateUserForm.discipliner.value = user.discipliner;
+	updateUserForm.role_update.value = user.role;
+	updateUserForm.setAttribute("data-id", user.id);
+	document.querySelector("#dialog_update_user").showModal();
+	showKontingent();
 }
