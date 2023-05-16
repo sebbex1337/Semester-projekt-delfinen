@@ -1,115 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="hold_oversigt.css">
-	<link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-	<header>
-		<button id="createUser">Create new user</button>
-	</header>
-    <!-- Nav bar -->
-	<nav>
-		<div id="delfinLogo"> <img id=""></div> 
-		<div id="aboutUs">
-			<h3>Om os</h3>
-		</div>
-		<div id="teamOverview">
-			<h3>Hold</h3>
-		</div>
-		<div id="becomeMember">
-			<h3>Opret Medlem</h3>
-		</div>
-		<div id="loginDiv">
-			<h3>Log Ud</h3>
-		</div>
-	</nav>
-<table style="float:left">
-	<thead>
-		<tr>
-			<th>Placering: </th>
-			<th>Navn: </th>
-			<th>Alder:</th>
-			<th>Kontakt: </th>
-			<th>Resultater:</th>
-			<th>Rediger</th>
-		</tr>
-	</thead>
-	<tbody id="adminview"></tbody>
-</table>
-<dialog id="dialog-create-user">
-	<h2>Opret nyt medlem</h2>
-	<form id="form-create-new-user">
-		<section class="form-create-user-grid">
-			<section id="form-create-user-info">
-				<label for="name"
-					>Navn:
-					<input type="text" name="name" id="form-create-name" placeholder="Enter name" required />
-				</label>
-				<label for="age"
-					>Alder:
-					<input type="number" name="age" id="form-create-age" placeholder="Enter age" required />
-				</label>
-				<label for="role_select"
-					>Aktivitetsform:
-					<select id="role_select">
-						<option value="" disabled selected>Vælg</option>
-						<option value="Konkurrence">Konkurrence svømmer</option>
-						<option value="Motionist">Motionist svømmer</option>
-					</select>
-				</label>
-				<label for="mail"
-					>Mail:
-					<input type="text" name="mail" id="form-create-mail" placeholder="Enter mail" required />
-				</label>
-				<label for="team_select"
-					>Medlemskabs status:
-					<select id="team_select">
-						<option value="" disabled selected>Vælg</option>
-						<option value="true">Aktiv</option>
-						<option value="false">Passiv</option>
-					</select>
-				</label>
-			</section>
-			<section id="form-create-options-section">
-				<h2>Discipliner</h2>
-				<label for="disciplinButterfly"
-					>Butterfly:
-					<input type="radio" name="discipliner" id="form-create-disciplinButterlfy" value="Butterfly" selected />
-				</label>
-				<label for="disciplinCrawl"
-					>Crawl:
-					<input type="radio" name="discipliner" id="form-create-disciplinCrawl" value="Crawl" />
-				</label>
-				<label for="disciplinRygcrawl"
-					>Rygcrawl:
-					<input type="radio" name="discipliner" id="form-create-disciplinRygcrawl" value="Rygcrawl" />
-				</label>
-				<label for="disciplinBryst"
-					>Brystsvømning:
-					<input type="radio" name="discipliner" id="form-create-disciplinBryst" value="Brystsvømning" />
-				</label>
-				<h2>Pinapple on pizza:</h2>
-				<label for="pineappleYes"
-					>Yes
-					<input type="radio" name="pineapple" id="form-create-pineappleYes" value="Yes" />
-				</label>
-				<label for="pineappleNo"
-					>No
-					<input type="radio" name="pineapple" id="form-create-pineappleNo" value="No" selected />
-				</label>
-			</section>
-		</section>
-		<section id="form-create-btns">
-			<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Create user" />
-			<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
-		</section>
-	</form>
-</dialog>
-</body>
-<script src="js/admin.js" type="module"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="hold_oversigt.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<button id="createUser">Create new user</button>
+		</header>
+		<!-- Nav bar -->
+		<nav>
+			<div id="delfinLogo"><img id="" /></div>
+			<div id="aboutUs">
+				<h3>Om os</h3>
+			</div>
+			<div id="teamOverview">
+				<h3>Hold</h3>
+			</div>
+			<div id="becomeMember">
+				<h3>Opret Medlem</h3>
+			</div>
+			<div id="loginDiv">
+				<h3>Log Ud</h3>
+			</div>
+		</nav>
+		<table style="float: left">
+			<thead>
+				<tr>
+					<th>Placering:</th>
+					<th>Navn:</th>
+					<th>Alder:</th>
+					<th>Kontakt:</th>
+					<th>Resultater:</th>
+					<th>Rediger</th>
+				</tr>
+			</thead>
+			<tbody id="adminview"></tbody>
+		</table>
+		<dialog id="dialog-create-user">
+			<h2>Opret nyt medlem</h2>
+			<form id="form-create-new-user">
+				<section class="form-create-user-grid">
+					<section id="form-create-user-info">
+						<label for="name"
+							>Navn:
+							<input type="text" name="name" id="form-create-name" placeholder="Enter name" required />
+						</label>
+						<label for="age"
+							>Alder:
+							<input type="number" name="age" id="form-create-age" placeholder="Enter age" required />
+						</label>
+						<label for="role_select"
+							>Aktivitetsform:
+							<select id="role_select">
+								<option value="" disabled selected>Vælg</option>
+								<option value="Konkurrence">Konkurrence svømmer</option>
+								<option value="Motionist">Motionist svømmer</option>
+							</select>
+						</label>
+						<label for="mail"
+							>Mail:
+							<input type="text" name="mail" id="form-create-mail" placeholder="Enter mail" required />
+						</label>
+						<label for="status_select"
+							>Medlemskabs status:
+							<select id="status_select">
+								<option value="" disabled selected>Vælg</option>
+								<option value="true">Aktiv</option>
+								<option value="false">Passiv</option>
+							</select>
+						</label>
+					</section>
+					<section id="form-create-options-section">
+						<h2>Discipliner</h2>
+						<label for="disciplinButterfly"
+							>Butterfly:
+							<input type="radio" name="discipliner" id="form-create-disciplinButterlfy" value="Butterfly" selected />
+						</label>
+						<label for="disciplinCrawl"
+							>Crawl:
+							<input type="radio" name="discipliner" id="form-create-disciplinCrawl" value="Crawl" />
+						</label>
+						<label for="disciplinRygcrawl"
+							>Rygcrawl:
+							<input type="radio" name="discipliner" id="form-create-disciplinRygcrawl" value="Rygcrawl" />
+						</label>
+						<label for="disciplinBryst"
+							>Brystsvømning:
+							<input type="radio" name="discipliner" id="form-create-disciplinBryst" value="Brystsvømning" />
+						</label>
+						<h2>Kontingent pris:</h2>
+						<p id="kontingentPris"></p>
+						<label for="Kontingent"></label>
+					</section>
+				</section>
+				<section id="form-create-btns">
+					<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Create user" />
+					<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
+				</section>
+			</form>
+		</dialog>
+	</body>
+	<script src="js/admin.js" type="module"></script>
 </html>

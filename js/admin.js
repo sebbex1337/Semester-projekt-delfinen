@@ -1,17 +1,19 @@
-import { getUsers } from "./REST.js";
+import { getUsers, createUser } from "./REST.js";
 window.addEventListener("load", initApp);
 
-let users 
+let users;
 
-function initApp(){
-    console.log("admin view loaded")
-    fetchUsers()
+function initApp() {
+	console.log("admin view loaded");
+	fetchUsers();
 
-    document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
+	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
+	document.querySelector("#status_select").addEventListener("change", showKontingent);
 }
-async function fetchUsers(){
-users = await getUsers()
-adminViewUsers(users)
+
+async function fetchUsers() {
+	users = await getUsers();
+	adminViewUsers(users);
 }
 function adminViewUser(user) {
 	document.querySelector("#adminview").insertAdjacentHTML(
@@ -24,12 +26,13 @@ function adminViewUser(user) {
         <td>Missing("results")</td>
         <td>Rediger</td>
         </tr>`
-    );}
+	);
+}
 
-function adminViewUsers(usersList){
-    for(const user of usersList ){
-        adminViewUser(user)
-    }
+function adminViewUsers(usersList) {
+	for (const user of usersList) {
+		adminViewUser(user);
+	}
 }
 
 function showCreateUserDialog() {
@@ -44,15 +47,37 @@ async function createUserClicked(event) {
 	const age = form.age.value;
 	const role = form.role_select.value;
 	const mail = form.mail.value;
-	const team = form.team_select.value;
-	const operatingSystem = form.discipliner.value;
-	const pineapple = form.pineapple.value;
-	const response = await createUser(name, age, role, mail, team, discipliner, pineapple);
+	const status = form.status_select.value;
+	const discipliner = form.discipliner.value;
+	const response = await createUser(name, mail, age, discipliner, status, role);
 	if (response.ok) {
 		console.log("User added to Firebase!");
 		form.reset();
 		document.querySelector("#dialog-create-user").close();
-		updateUsersGrid();
+        fetchUsers();
 		showPrompt("User added to Firebase!");
 	}
+}
+
+function showKontingent() {
+	const age = document.querySelector("#form-create-age").value;
+	const status = document.querySelector("#status_select").value;
+	console.log(status);
+	let html = "";
+	if (status === "true") {
+		if (age < 18) {
+			html = "dit årlige kontingent 1000 kr.";
+		}
+		if (age >= 18 && age < 60) {
+			html = "dit årlige kontingent 1600 kr.";
+		}
+		if (age >= 60) {
+			html = "dit årlige kontingent 1200 kr.";
+		}
+	}
+	if (status === "false") {
+		html = "dit årlige kontingent er 500 kr.";
+	}
+
+	document.querySelector("#kontingentPris").textContent = html;
 }
