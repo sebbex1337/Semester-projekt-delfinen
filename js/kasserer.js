@@ -5,6 +5,7 @@ let users = [];
 
 function initApp() {
 	updateUsersArr();
+	document.querySelector("#restance-select").addEventListener("change", filterByChanged);
 }
 
 async function updateUsersArr() {
@@ -27,7 +28,7 @@ function displayNumbersinTable(listOfUsers) {
 			if (user.age < 18) {
 				numOfJunior++;
 			}
-			if (user.age >= 18) {
+			if (user.age >= 18 && user.age < 60) {
 				numOfSenior++;
 			}
 			if (user.age >= 60) {
@@ -54,7 +55,7 @@ function displayCumulatedKontingent(listOfUsers) {
 			if (user.age < 18) {
 				junior += 1000;
 			}
-			if (user.age >= 18) {
+			if (user.age >= 18 && user.age < 60) {
 				senior += 1600;
 			}
 			if (user.age >= 60) {
@@ -78,7 +79,7 @@ function displayExpectedQuota(listOfUsers) {
 			if (user.age < 18) {
 				sum += 1000;
 			}
-			if (user.age >= 18) {
+			if (user.age >= 18 && user.age < 60) {
 				sum += 1600;
 			}
 			if (user.age >= 60) {
@@ -125,7 +126,6 @@ function displayUser(user) {
                 <td>${user.id}</td>
                 <td>${kontingent}</td>
                 <td>${user.payed}</td>
-                <td><button>Redigér</button></td>
             </tr>`
 	);
 }
@@ -135,7 +135,7 @@ function calculateKontingent(user) {
 		if (user.age < 18) {
 			return 1000;
 		}
-		if (user.age >= 18) {
+		if (user.age >= 18 && user.age < 60) {
 			return 1600;
 		}
 		if (user.age >= 60) {
@@ -143,5 +143,21 @@ function calculateKontingent(user) {
 		}
 	} else {
 		return 500;
+	}
+}
+
+function filterByChanged(event) {
+	const selectedValue = event.target.value;
+	displayUsersTable(filterBy(selectedValue));
+}
+
+function filterBy(filterBy) {
+	switch (filterBy) {
+		case "all":
+			return users;
+		case "true":
+			return users.filter((user) => user.payed === true);
+		case "false":
+			return users.filter((user) => user.payed === false);
 	}
 }

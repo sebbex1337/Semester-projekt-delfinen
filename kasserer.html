@@ -31,6 +31,14 @@
 		</nav>
 		<main>
 			<div id="left-side-view">
+				<label for="restance-select"
+					>Filtrer:
+					<select name="restance" id="restance-select">
+						<option value="all">Alle</option>
+						<option value="true">Betalt</option>
+						<option value="false">Ikke Betalt</option>
+					</select>
+				</label>
 				<table>
 					<thead>
 						<th>Dato</th>
@@ -39,7 +47,6 @@
 						<th>ID</th>
 						<th>Kontingent</th>
 						<th>Betalt</th>
-						<th>Redigér</th>
 					</thead>
 					<tbody id="table-kontingent-oversigt"></tbody>
 				</table>
