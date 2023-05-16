@@ -1,0 +1,59 @@
+#dialog-create-user {
+    width: 600px;
+    padding: 20px;
+    background-color: #C9FAFE;
+  }
+  
+  #dialog-create-user h2 {
+    margin-top: 0;
+  }
+  
+  #form-create-new-user {
+    margin-bottom: 20px;
+  }
+  
+  .form-create-user-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  #form-create-user-info label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  /* #form-create-options-section {
+    margin-top: 20px;
+  } */
+  
+  #form-create-options-section h2 {
+    margin-top: 0;
+  }
+  
+  #form-create-options-section label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  #kontingentPris {
+    font-weight: bold;
+  }
+  
+  #form-create-btns {
+    display: flex;
+    justify-content:right;
+    margin-top: 20px;
+  }
+  
+  .input-btns-styling {
+    margin-left: 10px;
+  }
+
+  #dialog-close-button {
+color: red;
+  }
+  #submit-btn{
+    color: green;
+  }
+  
