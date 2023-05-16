@@ -17,22 +17,6 @@ async function updateUsersTable() {
 	displayUsers(users);
 }
 
-function displayUser(user) {
-	if (user.role !== "admin" && user.role !== "træner") {
-		document.querySelector("#hold_oversigt").insertAdjacentHTML(
-			"beforeend",
-			/*html*/ `
-		<tr>
-			<td>${user.discipliner}</td>
-			<td>${user.name}</td>
-			<td>${user.age}</td>
-			<td>${user.mail}</td>
-		</tr>
-	`
-		);
-	}
-}
-
 function displayUsers(listOfUsers) {
 	document.querySelector("#hold_oversigt").innerHTML = ""; // Reset users list in html
 
@@ -43,6 +27,28 @@ function displayUsers(listOfUsers) {
 	} else {
 		document.querySelector("#hold_oversigt").innerHTML = "Sorry! No users were found";
 	}
+}
+
+function displayUser(user) {
+	if (user.role !== "admin" && user.role !== "træner") {
+		document.querySelector("#hold_oversigt").insertAdjacentHTML(
+			"beforeend",
+			/*html*/ `
+		<tr>
+			<td>${user.discipliner}</td>
+			<td>${user.name}</td>
+			<td>${user.age}</td>
+			<td>${user.mail}</td>
+			<td><button class="edit">Redigér</button></td>
+		</tr>
+	`
+		);
+		document.querySelector("#hold_oversigt tr:last-child .edit").addEventListener("click", () => editClicked(user));
+	}
+}
+
+function editClicked(user) {
+	console.log(user);
 }
 // sorter og filter
 
