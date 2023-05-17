@@ -31,8 +31,8 @@ async function createUser(name, mail, age, discipliner, status, role) {
 	return response;
 }
 
-async function updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingDisciplin, trainingLength, trainingResult, tournament, tournamentDate, tournamentDisciplin, tournamentResult, tournamentLength) {
-	const userToUpdate = { name, mail, age, discipliner, status, role, trainingDate, trainingDisciplin, trainingLength, trainingResult, tournament, tournamentDate, tournamentDisciplin, tournamentResult, tournamentLength };
+async function updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite) {
+	const userToUpdate = { name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite };
 	const userAsJson = JSON.stringify(userToUpdate);
 	const response = await fetch(`${ENDPOINT}/members/${id}.json`, {
 		method: "PUT",
