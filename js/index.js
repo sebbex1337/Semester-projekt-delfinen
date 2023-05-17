@@ -28,3 +28,5 @@ function validateLogin(event) {
 		window.location.href = "kasserer.html";
 	}
 }
+
+export { validateLogin, showLogin };

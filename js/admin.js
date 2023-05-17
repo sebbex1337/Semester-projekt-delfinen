@@ -54,7 +54,8 @@ async function createUserClicked(event) {
 	const mail = form.mail.value;
 	const status = form.status_select.value;
 	const discipliner = form.discipliner.value;
-	const response = await createUser(name, mail, age, discipliner, status, role);
+	const payed = true;
+	const response = await createUser(name, mail, age, discipliner, status, role, payed);
 	if (response.ok) {
 		console.log("User added to Firebase!");
 		form.reset();

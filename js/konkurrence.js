@@ -19,6 +19,7 @@ async function editUserClicked(event) {
 	const discipliner = document.querySelector("#edit-disciplin").textContent;
 	const status = document.querySelector("#edit-status").textContent;
 	const role = document.querySelector("#edit-role").textContent;
+	const payed = true;
 	const trainingDate = form.trainingDate.value;
 	const trainingLength = form.trainingLength.value;
 	const trainingResult = form.trainingResult.value;
@@ -28,7 +29,7 @@ async function editUserClicked(event) {
 	const tournamentLength = form.tournamentLength.value;
 	const favorite = form.favorite.value;
 	const id = form.getAttribute("data-id");
-	const response = await updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite);
+	const response = await updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite, payed);
 	if (response.ok) {
 		console.log("User updated");
 		form.reset();

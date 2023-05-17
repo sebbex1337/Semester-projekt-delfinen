@@ -21,8 +21,8 @@ function prepareUsersData(DataObject) {
 	return newData;
 }
 
-async function createUser(name, mail, age, discipliner, status, role) {
-	const newUser = { name, mail, age, discipliner, status, role, username, password };
+async function createUser(name, mail, age, discipliner, status, role, payed) {
+	const newUser = { name, mail, age, discipliner, status, role, payed };
 	const userAsJson = JSON.stringify(newUser);
 	const response = await fetch(`${ENDPOINT}/members.json`, {
 		method: "POST",
@@ -31,8 +31,8 @@ async function createUser(name, mail, age, discipliner, status, role) {
 	return response;
 }
 
-async function updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite) {
-	const userToUpdate = { name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite };
+async function updateUser(id, name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite, payed) {
+	const userToUpdate = { name, mail, age, discipliner, status, role, trainingDate, trainingLength, trainingResult, tournament, tournamentDate, tournamentResult, tournamentLength, favorite, payed };
 	const userAsJson = JSON.stringify(userToUpdate);
 	const response = await fetch(`${ENDPOINT}/members/${id}.json`, {
 		method: "PUT",
