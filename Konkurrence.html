@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Svømmeklub Delfin</title>
+	</head>
+	<body>
+		<nav>
+			<div id="logo-nav">
+				<img src="logo/svømmeklub_delfin.png" id="logo-nav-img" />
+			</div>
+			<div id="hold-nav">
+				<h3>Hold</h3>
+			</div>
+			<div id="konkurrence-nav">
+				<h3>Konkurrence</h3>
+			</div>
+			<div id="medlemUpdate">
+				<h3>Håndter medlem</h3>
+			</div>
+			<div id="login-nav">
+				<h3>Logged in as: Træner</h3>
+			</div>
+			<div id="logOut">
+				<h3>Log out</h3>
+			</div>
+		</nav>
+		<main>
+			<table>
+				<caption>
+					Hold oversigt
+				</caption>
+				<thead>
+					<tr>
+						<th>Disciplin</th>
+						<th>Navn</th>
+						<th>Alder</th>
+						<th>Kontakt</th>
+						<th>Redigér</th>
+					</tr>
+				</thead>
+				<tbody id="konkurrence-oversigt"></tbody>
+			</table>
+		</main>
+		<footer>
+			<h3>TEST</h3>
+		</footer>
+
+		<dialog id="dialog-edit-results" method="dialog">
+			<h2>Redigér resultater</h2>
+			<section class="dialog-grid-container">
+				<section>
+					<label for="name">Name: <span id="edit-name"></span></label>
+					<label for="age">Age: <span id="edit-age"></span></label>
+					<label for="mail">Mail: <span id="edit-mail"></span></label>
+					<label for="disciplin">Disciplin: <span id="edit-disciplin"></span></label>
+					<label for="status">Status: <span id="edit-status"></span></label>
+					<label for="role">Role: <span id="edit-role"></span></label>
+				</section>
+				<form id="form-edit-results">
+					<label for="trainingDate">Træningsdato: <input type="date" name="trainingDate" id="edit-trainingDate" /></label>
+					<label for="trainingLength">Længde i meter: <input type="number" name="trainingLength" id="edit-trainingLength" /></label>
+					<label for="trainingResult">Tid: <input type="text" name="trainingResult" id="trainingResult" /></label>
+					<label for="tournament">Turnering: <input type="text" name="tournament" id="edit-tournament" /></label>
+					<label for="tournamentDate">Turningeringsdato: <input type="date" name="tournamentDate" id="edit-tournamentDate" /></label>
+					<label for="tournamentResult">Turningers Resultat: <input type="text" name="tournamentResult" id="edit-tournamentResult" /></label>
+					<label for="tournamentLength">Turnerings længde i meter: <input type="number" name="tournamentLength" id="edit-tournamentLength" /></label>
+					<label for="favorites"
+						>Udtag til konkurrence
+						<select name="favorite" id="favorite-select">
+							<option value="false" selected>Nej</option>
+							<option value="true">Ja</option>
+						</select>
+					</label>
+					<div>
+						<button>Opdater</button>
+						<button type="button" id="cancel-btn">Luk</button>
+					</div>
+				</form>
+			</section>
+		</dialog>
+		<script src="js/konkurrence.js" type="module"></script>
+	</body>
+</html>
