@@ -15,8 +15,15 @@ nav {
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 12px;
-	background-color: #0d78aa;
+	
 }
+.navbar {
+	background-color: #002d52;
+	color: #ffffff;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+  }
 
 footer {
 	background-color: #0d78aa;
