@@ -7,7 +7,6 @@ const settings = {
 	filterDisc: "",
 	filterAge: "",
 	sortTime: "asc",
-	udtaget: "",
 };
 
 function initApp() {
@@ -182,23 +181,14 @@ function sortByTime(sortedList) {
 }
 
 function filterUdtaget(event) {
-	const filter = event.target.value;
-	setUdtaget(filter);
+	const selectedValue = event.target.value;
+	displayUsers(filterUdtagelse(selectedValue));
 }
 
-function setUdtaget(filter) {
-	settings.udtaget = filter;
-	console.log(settings.udtaget);
-	buildList();
-}
-
-function filterUtagelse(filteredList) {
-	if (settings.udtagelse === "") {
-		console.log("hej");
-		return filteredList;
-	} else if (settings.udtagelse === "udtaget") {
-		console.log("her?");
-		filteredList = filteredList.filter((user) => user.favorite === "true");
+function filterUdtagelse(filterBy) {
+	if (filterBy === "") {
+		return users;
+	} else if (filterBy === "udtaget") {
+		return users.filter((user) => user.favorite === "true");
 	}
-	return filteredList;
 }
