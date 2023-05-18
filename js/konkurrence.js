@@ -13,6 +13,7 @@ function initApp() {
 	fetchUsers();
 
 	document.querySelector("#hold-nav").addEventListener("click", () => (window.location.href = "hold_oversigt.html"));
+	document.querySelector("#logOut").addEventListener("click", () => (window.location.href = "index.html"));
 	document.querySelector("#form-edit-results").addEventListener("submit", editUserClicked);
 	document.querySelector("#filter-disciplin").addEventListener("change", filterDisciplin);
 	document.querySelector("#filter-age").addEventListener("change", filterAge);

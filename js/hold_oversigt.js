@@ -61,7 +61,7 @@ function sortUsers(sortBy) {
 	if (sortBy === "age") {
 		return users.sort((userA, userB) => userA.age > userB.age);
 	}
-	if (sortBy === "discipliner") {
+	if (sortBy === "Disciplin") {
 		return users.sort((userA, userB) => userA.discipliner > userB.discipliner);
 	}
 }
