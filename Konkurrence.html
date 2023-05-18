@@ -29,13 +29,46 @@
 			</div>
 		</nav>
 		<main>
+			<div id="sort-container">
+				<label for="filter-disciplin"
+					>Filtrér:
+					<select id="filter-disciplin">
+						<option value="" selected>Filter</option>
+						<option value="Butterfly">Butterfly</option>
+						<option value="Crawl">Crawl</option>
+						<option value="Rygcrawl">Rygcrawl</option>
+						<option value="Brystsvømning">Brystsvømning</option>
+					</select>
+				</label>
+				<label for="filter-age">
+					Filtrér alder
+					<select id="filter-age">
+						<option value="" selected>Filter</option>
+						<option value="Junior">Junior</option>
+						<option value="Senior">Senior</option>
+					</select>
+				</label>
+				<label for="sort-time">
+					Sorter efter tid:
+					<select id="sort-time">
+						<option value="">Sorter</option>
+						<option value="asc">Stigende</option>
+						<option value="dsc">Faldende</option>
+					</select>
+				</label>
+				<label for="udtagelse"
+					>Vis kun udtaget til konkurrence
+					<select id="udtaget">
+						<option value="">Alle</option>
+						<option value="udtaget">Udtaget</option>
+					</select>
+				</label>
+			</div>
 			<table>
-				<caption>
-					Hold oversigt
-				</caption>
 				<thead>
 					<tr>
 						<th>Disciplin</th>
+						<th>Træningsresultat</th>
 						<th>Navn</th>
 						<th>Alder</th>
 						<th>Kontakt</th>

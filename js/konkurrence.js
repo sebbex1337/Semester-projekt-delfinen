@@ -3,11 +3,22 @@ window.addEventListener("load", initApp);
 
 let users = [];
 
+const settings = {
+	filterDisc: "",
+	filterAge: "",
+	sortTime: "asc",
+	udtaget: "",
+};
+
 function initApp() {
 	fetchUsers();
 
 	document.querySelector("#hold-nav").addEventListener("click", () => (window.location.href = "hold_oversigt.html"));
 	document.querySelector("#form-edit-results").addEventListener("submit", editUserClicked);
+	document.querySelector("#filter-disciplin").addEventListener("change", filterDisciplin);
+	document.querySelector("#filter-age").addEventListener("change", filterAge);
+	document.querySelector("#sort-time").addEventListener("change", setSortTime);
+	document.querySelector("#udtaget").addEventListener("change", filterUdtaget);
 }
 
 async function editUserClicked(event) {
@@ -58,6 +69,7 @@ function displayUser(user) {
 			/*html*/ `
             <tr>
                 <td>${user.discipliner}</td>
+                <td>${user.trainingResult}</td>
                 <td>${user.name}</td>
                 <td>${user.age}</td>
                 <td>${user.mail}</td>
@@ -66,7 +78,6 @@ function displayUser(user) {
         `
 		);
 		document.querySelector("#konkurrence-oversigt tr:last-child .edit").addEventListener("click", () => editClicked(user));
-		console.log(user);
 	}
 }
 
@@ -90,4 +101,104 @@ function editClicked(user) {
 	editForm.setAttribute("data-id", user.id);
 	document.querySelector("#dialog-edit-results").showModal();
 	document.querySelector("#cancel-btn").addEventListener("click", () => document.querySelector("#dialog-edit-results").closest());
+}
+
+function buildList() {
+	const currentList = filterDisciplinList(users);
+	const filteredList = filterByAge(currentList);
+	const sortedList = sortByTime(filteredList);
+
+	displayUsers(sortedList);
+}
+
+function filterDisciplin(event) {
+	const filter = event.target.value;
+	setFilterDisciplin(filter);
+}
+
+function setFilterDisciplin(filter) {
+	settings.filterDisc = filter;
+	console.log(settings.filterDisc);
+	buildList();
+}
+
+function filterDisciplinList(filteredList) {
+	if (settings.filterDisc === "") {
+		return filteredList;
+	} else if (settings.filterDisc === "Butterfly") {
+		filteredList = filteredList.filter((user) => user.discipliner.includes(settings.filterDisc));
+	} else if (settings.filterDisc === "Crawl") {
+		filteredList = filteredList.filter((user) => user.discipliner.includes(settings.filterDisc));
+	} else if (settings.filterDisc === "Rygcrawl") {
+		filteredList = filteredList.filter((user) => user.discipliner.includes(settings.filterDisc));
+	} else if (settings.filterDisc === "Brystsvømning") {
+		filteredList = filteredList.filter((user) => user.discipliner.includes(settings.filterDisc));
+	}
+	return filteredList;
+}
+
+function filterAge(event) {
+	const filter = event.target.value;
+	setFilterAge(filter);
+}
+
+function setFilterAge(filter) {
+	settings.filterAge = filter;
+	console.log(settings.filterAge);
+	buildList();
+}
+
+function filterByAge(filteredList) {
+	if (settings.filterAge === "") {
+		return filteredList;
+	} else if (settings.filterAge === "Junior") {
+		filteredList = filteredList.filter((user) => user.age < 18);
+	} else if (settings.filterAge === "Senior") {
+		filteredList = filteredList.filter((user) => user.age >= 18 && user.age < 60);
+	}
+	return filteredList;
+}
+
+function setSortTime(event) {
+	const sort = event.target.value;
+	setSort(sort);
+}
+
+function setSort(sort) {
+	settings.sortTime = sort;
+	console.log(settings.sortTime);
+	buildList();
+}
+
+function sortByTime(sortedList) {
+	if (settings.sortTime === "") {
+		return sortedList;
+	} else if (settings.sortTime === "asc") {
+		sortedList = sortedList.sort((a, b) => a.trainingResult > b.trainingResult);
+	} else if (settings.sortTime === "dsc") {
+		sortedList = sortedList.sort((a, b) => a.trainingResult < b.trainingResult);
+	}
+	return sortedList;
+}
+
+function filterUdtaget(event) {
+	const filter = event.target.value;
+	setUdtaget(filter);
+}
+
+function setUdtaget(filter) {
+	settings.udtaget = filter;
+	console.log(settings.udtaget);
+	buildList();
+}
+
+function filterUtagelse(filteredList) {
+	if (settings.udtagelse === "") {
+		console.log("hej");
+		return filteredList;
+	} else if (settings.udtagelse === "udtaget") {
+		console.log("her?");
+		filteredList = filteredList.filter((user) => user.favorite === "true");
+	}
+	return filteredList;
 }
