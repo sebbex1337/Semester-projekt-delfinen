@@ -51,6 +51,9 @@ async function editUserClicked(event) {
 
 async function fetchUsers() {
 	users = await getUsers();
+	// Filter konkurrence nu så behøver vi ikke senere
+	users = users.filter((user) => user.role === "konkurrence");
+	console.log(users);
 	displayUsers(users);
 }
 
@@ -63,10 +66,9 @@ function displayUsers(listOfUsers) {
 }
 
 function displayUser(user) {
-	if (user.role === "konkurrence") {
-		document.querySelector("#konkurrence-oversigt").insertAdjacentHTML(
-			"beforeend",
-			/*html*/ `
+	document.querySelector("#konkurrence-oversigt").insertAdjacentHTML(
+		"beforeend",
+		/*html*/ `
             <tr>
                 <td>${user.discipliner}</td>
                 <td>${user.trainingResult}</td>
@@ -76,9 +78,8 @@ function displayUser(user) {
                 <td><button class="edit">Redigér</button></td>
             </tr>
         `
-		);
-		document.querySelector("#konkurrence-oversigt tr:last-child .edit").addEventListener("click", () => editClicked(user));
-	}
+	);
+	document.querySelector("#konkurrence-oversigt tr:last-child .edit").addEventListener("click", () => editClicked(user));
 }
 
 function editClicked(user) {
@@ -174,9 +175,13 @@ function sortByTime(sortedList) {
 	if (settings.sortTime === "") {
 		return sortedList;
 	} else if (settings.sortTime === "asc") {
-		sortedList = sortedList.sort((a, b) => a.trainingResult > b.trainingResult);
+		sortedList = sortedList.sort((a, b) => {
+			return Number(a.trainingResult) - Number(b.trainingResult);
+		});
 	} else if (settings.sortTime === "dsc") {
-		sortedList = sortedList.sort((a, b) => a.trainingResult < b.trainingResult);
+		sortedList = sortedList.sort((a, b) => {
+			return Number(b.trainingResult) - Number(a.trainingResult);
+		});
 	}
 	return sortedList;
 }
