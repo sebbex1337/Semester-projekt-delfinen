@@ -40,16 +40,10 @@ function displayUser(user) {
 			<td>${user.name}</td>
 			<td>${user.age}</td>
 			<td>${user.mail}</td>
-			<td><button class="edit">Redigér</button></td>
 		</tr>
 	`
 		);
-		document.querySelector("#hold_oversigt tr:last-child .edit").addEventListener("click", () => editClicked(user));
 	}
-}
-
-function editClicked(user) {
-	console.log(user);
 }
 
 // sorter og filter

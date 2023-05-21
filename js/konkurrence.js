@@ -19,6 +19,9 @@ function initApp() {
 	document.querySelector("#filter-age").addEventListener("change", filterAge);
 	document.querySelector("#sort-time").addEventListener("change", setSortTime);
 	document.querySelector("#udtaget").addEventListener("change", filterUdtaget);
+	document.querySelector("#cancel-btn").addEventListener("click", () => {
+		document.querySelector("#dialog-edit-results").close();
+	});
 }
 
 async function editUserClicked(event) {
