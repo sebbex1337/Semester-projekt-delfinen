@@ -1,3 +1,7 @@
+html {
+	font-family: sans-serif;
+}
+
 h1 {
 	text-align: center;
 	color: #0d78aa;
@@ -5,9 +9,28 @@ h1 {
 }
 
 body {
+	/* Taken from uigradients.com */
 	margin: 0;
 	padding: 0;
-	background-color: whitesmoke;
+	background: #000046; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #1cb5e0, whitesmoke); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #1cb5e0, whitesmoke); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-repeat: no-repeat;
+}
+
+footer,
+nav {
+	background-color: transparent;
+}
+
+button {
+	background-color: #3498db;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 10px;
+	cursor: pointer;
 }
 
 /* General nav styling */
@@ -16,7 +39,6 @@ nav {
 	/* width: 100%; */
 	display: flex;
 	justify-content: space-evenly;
-	background-color: #0d78aa;
 }
 
 nav div {
@@ -24,7 +46,7 @@ nav div {
 }
 
 nav div:hover {
-	background-color: #0b5e85;
+	border-bottom: 3px solid #0b5e85;
 }
 
 nav img {
@@ -33,7 +55,6 @@ nav img {
 }
 
 footer {
-	background-color: #0d78aa;
 	text-align: center;
 	width: 100%;
 	padding: 0.5em 0 0.5em 0;
@@ -51,9 +72,21 @@ table {
 td,
 th {
 	height: 20px;
-	background-color: #c9fafe;
 	font-size: small;
 	padding: 10px;
 	border: 1px solid #cccccc;
 	text-align: center;
+	font-family: system-ui, sans-serif;
+}
+
+th {
+	background-color: #0d78aa;
+	color: white;
+}
+tr:nth-child(odd) {
+	background-color: white;
+}
+
+tr {
+	background-color: #f0fcff;
 }

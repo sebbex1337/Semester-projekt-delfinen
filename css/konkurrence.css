@@ -1,7 +1,7 @@
 main {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 1em 20em 0 20em;
+	padding: 1em 15% 1em 15%;
 }
 
 table {
@@ -9,7 +9,21 @@ table {
 }
 
 #sort-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	margin-bottom: 1em;
+	width: 100%;
+}
+
+#right-side {
+	text-align: right;
+}
+
+select {
+	border: 0.1px solid black;
+	padding: 0.1em;
+	margin-bottom: 0.3em;
+	text-align: center;
 }
 
 /* Styling for the dialog */

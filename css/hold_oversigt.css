@@ -23,3 +23,10 @@ table {
 #hold_oversigt {
 	overflow: scroll;
 }
+
+select {
+	border: 0.1px solid black;
+	padding: 0.1em;
+	margin-bottom: 0.3em;
+	text-align: center;
+}
