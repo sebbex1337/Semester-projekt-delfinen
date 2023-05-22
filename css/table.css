@@ -1,0 +1,30 @@
+/* Table css */
+
+table {
+	background-color: #c9fafe;
+	width: 47%;
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+}
+
+td,
+th {
+	height: 20px;
+	font-size: small;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	font-family: system-ui, sans-serif;
+}
+
+th {
+	background-color: #0d78aa;
+	color: white;
+}
+tr:nth-child(odd) {
+	background-color: white;
+}
+
+tr {
+	background-color: #f0fcff;
+}
