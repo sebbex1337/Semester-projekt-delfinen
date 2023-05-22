@@ -79,3 +79,5 @@ function showKontingent() {
 
 	document.querySelector("#kontingentPris").textContent = html;
 }
+
+export { showLogin, validateLogin };

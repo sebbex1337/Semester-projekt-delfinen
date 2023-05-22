@@ -130,7 +130,6 @@ function displayUser(user) {
 			"beforeend",
 			/*html*/ `
             <tr>
-                <td>MISSING IN FIREBASE</td>
                 <td>${user.name}</td>
                 <td>${user.mail}</td>
                 <td>${user.id}</td>
