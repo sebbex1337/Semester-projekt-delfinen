@@ -27,14 +27,14 @@ function adminViewUsers(usersList) {
 function adminViewUser(user) {
 	document.querySelector("#adminview").insertAdjacentHTML(
 		"beforeend",
-		/*html*/ `<tr>
-        <td>Missing("Placement")</td>
-        <td>${user.name}</td>
-        <td>${user.age}</td>
-        <td>${user.mail}</td>
-        <td>Missing("results")</td>
-        <td>
-        <button class="edit">Rediger</button></td>
+		/*html*/ `
+		<tr>
+			<td>${user.name}</td>
+			<td>${user.age}</td>
+			<td>${user.mail}</td>
+			<td>${user.trainingResult}</td>
+			<td>${user.role}</td>
+        	<td><button class="edit">Rediger</button></td>
         </tr>`
 	);
 	document.querySelector("#adminview tr:last-child .edit").addEventListener("click", () => updateUserClicked(user));
@@ -79,7 +79,6 @@ function updateUserClicked(user) {
 function showKontingent() {
 	const age = document.querySelector("#form-create-age").value;
 	const status = document.querySelector("#status_select").value;
-	console.log(status);
 	let html = "";
 	if (status === "true") {
 		if (age < 18) {
@@ -96,5 +95,5 @@ function showKontingent() {
 		html = "Dit årlige kontingent med et passivt medlemskab er 500 kr.";
 	}
 
-	document.querySelector("kontingentPris").textContent = html;
+	document.querySelector("#kontingentPris").textContent = html;
 }
