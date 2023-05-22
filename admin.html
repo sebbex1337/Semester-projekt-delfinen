@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="logo/svømmeklub_delfin.png" type="image/x-icon" />
-		<link rel="stylesheet" href="css/hold_oversigt.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/admin.css" />
 		<title>Document</title>
@@ -14,9 +13,6 @@
 		<!-- Nav bar -->
 		<nav>
 			<div id="delfinLogo"><img src="logo/svømmeklub_delfin.png" id="" /></div>
-			<div id="teamOverview">
-				<h3>Hold</h3>
-			</div>
 			<div id="createUser">
 				<h3>Opret Medlem</h3>
 			</div>
@@ -27,19 +23,24 @@
 				<h3>Log out</h3>
 			</div>
 		</nav>
-		<table style="float: left">
-			<thead>
-				<tr>
-					<th>Placering:</th>
-					<th>Navn:</th>
-					<th>Alder:</th>
-					<th>Kontakt:</th>
-					<th>Resultater:</th>
-					<th>Rediger</th>
-				</tr>
-			</thead>
-			<tbody id="adminview"></tbody>
-		</table>
+		<main>
+			<table>
+				<thead>
+					<tr>
+						<th>Navn</th>
+						<th>Alder</th>
+						<th>Kontakt</th>
+						<th>Resultater</th>
+						<th>Type</th>
+						<th>Rediger</th>
+					</tr>
+				</thead>
+				<tbody id="adminview"></tbody>
+			</table>
+		</main>
+		<footer>
+			<h2>TEST</h2>
+		</footer>
 		<dialog id="dialog-create-user">
 			<h2>Opret nyt medlem</h2>
 			<form id="form-create-new-user">

@@ -1,3 +1,11 @@
+main {
+	margin: 1em 20em 1em 20em;
+}
+
+table {
+	width: 100%;
+}
+
 #dialog-create-user {
 	width: 600px;
 	padding: 20px;
