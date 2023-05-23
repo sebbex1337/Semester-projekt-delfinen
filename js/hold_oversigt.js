@@ -8,7 +8,7 @@ function initApp() {
 	updateUsersTable();
 
 	document.querySelector("#logOut").addEventListener("click", () => (window.location.href = "index.html"));
-	document.querySelector("#konkurrence-nav").addEventListener("click", () => (window.location.href = "konkurrence.html"));
+	document.querySelector("#konkurrence-nav").addEventListener("click", () => (window.location.href = "Konkurrence.html"));
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
 }
