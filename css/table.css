@@ -1,30 +1,26 @@
 /* Table css */
-
+/* Taken from https://freefrontend.com/css-tables/ */
 table {
-	background-color: #c9fafe;
-	width: 47%;
-	border: 1px solid #cccccc;
+	background: linear-gradient(to top, #49a09d, #5f2c82);
 	border-collapse: collapse;
-}
-
-td,
-th {
-	height: 20px;
-	font-size: small;
-	padding: 10px;
-	border: 1px solid #cccccc;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	text-align: center;
+}
+th,
+td {
 	font-family: system-ui, sans-serif;
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #fff;
+	text-align: center;
 }
-
-th {
-	background-color: #0d78aa;
-	color: white;
+thead th {
+	background-color: #55608f;
 }
-tr:nth-child(odd) {
-	background-color: white;
+tbody tr:hover {
+	background-color: rgba(255, 255, 255, 0.3);
 }
-
-tr {
-	background-color: #f0fcff;
+tbody td {
+	position: relative;
 }
