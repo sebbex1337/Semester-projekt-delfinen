@@ -50,13 +50,16 @@ function displayUser(user) {
 
 function sortUsers(sortBy) {
 	if (sortBy === "name") {
-		return users.sort((userA, userB) => userA.name > userB.name);
+		return users.sort((userA, userB) => userA.name.localeCompare(userB.name));
 	}
 	if (sortBy === "age") {
-		return users.sort((userA, userB) => userA.age > userB.age);
+		return users.sort((userA, userB) => userA.age - userB.age);
 	}
 	if (sortBy === "Disciplin") {
-		return users.sort((userA, userB) => userA.discipliner > userB.discipliner);
+		return users.sort((userA, userB) => userA.discipliner.localeCompare(userB.discipliner));
+	}
+	if (sortBy === "") {
+		return users;
 	}
 }
 
